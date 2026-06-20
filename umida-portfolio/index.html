@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umida — Front-end Developer</title>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Umida — Front-end developer. Calm, thoughtful, beautifully detailed digital experiences.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===== Custom cursor glow ===== -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ===== Loader ===== -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark">
+    <span>U</span><span>S</span>
+  </div>
+</div>
+
+<!-- ===== Navbar ===== -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo" aria-label="Umida — Home">
+      <span class="logo-mark">
+        <span class="logo-letter">U</span><span class="logo-letter">S</span>
+      </span>
+    </a>
+
+    <nav class="nav-center" id="navCenter">
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active" data-section="home" data-i18n="nav.home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about" data-i18n="nav.about">About me</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#portfolio" class="nav-link" data-section="portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+    </nav>
+
+    <div class="nav-right">
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-current" id="langCurrent" aria-haspopup="listbox" aria-expanded="false">
+          <span id="langLabel">UZ</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" id="langMenu" role="listbox">
+          <li role="option" data-lang="uz">O'zbekcha</li>
+          <li role="option" data-lang="en">English</li>
+          <li role="option" data-lang="ru">Русский</li>
+        </ul>
+      </div>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark / light mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5V5M12 19V21.5M21.5 12H19M5 12H2.5M18.4 5.6L16.6 7.4M7.4 16.6L5.6 18.4M18.4 18.4L16.6 16.6M7.4 7.4L5.6 5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 14.5C18.7 15.2 17.2 15.6 15.6 15.6C10.6 15.6 6.5 11.5 6.5 6.5C6.5 4.9 6.9 3.4 7.6 2.1C4.2 3.4 1.8 6.7 1.8 10.5C1.8 15.5 5.9 19.6 10.9 19.6C14.7 19.6 18 17.2 19.3 13.8" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      </button>
+
+      <button class="burger" id="burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="nav-links-mobile">
+      <li><a href="#home" class="nav-link" data-section="home" data-i18n="nav.home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about" data-i18n="nav.about">About me</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#portfolio" class="nav-link" data-section="portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== HOME ===== -->
+  <section id="home" class="section hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="grain"></div>
+      <svg class="hero-blob" viewBox="0 0 800 800" aria-hidden="true">
+        <defs>
+          <linearGradient id="blobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="var(--accent)"/>
+            <stop offset="100%" stop-color="var(--accent-2)"/>
+          </linearGradient>
+        </defs>
+        <path class="blob-path" fill="url(#blobGrad)" />
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-text" data-reveal>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Welcome to my world</p>
+        <h1 class="hero-title">
+          <span data-i18n="hero.greet">Hi there, I'm</span>
+          <span class="hero-name">Umida</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero.role">Front-end developer</p>
+        <p class="hero-desc" data-i18n="hero.desc">I design and build calm, thoughtful, and beautifully detailed interfaces — where every pixel has a reason to be there.</p>
+        <a href="#portfolio" class="btn btn-primary" data-i18n="hero.cta">
+          <span data-i18n="hero.cta">Discover my creations</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-visual" data-reveal>
+        <div class="scene" id="scene3d">
+          <div class="float-card card-code">
+            <div class="card-dots"><span></span><span></span><span></span></div>
+            <pre class="code-lines"><span class="cl1">const</span> <span class="cl2">dev</span> = {
+  name: <span class="cl3">'Umida'</span>,
+  loves: <span class="cl3">'clean UI'</span>,
+  builds: <span class="cl3">'with care'</span>
+};</pre>
+          </div>
+          <div class="orbit-ring ring-1"></div>
+          <div class="orbit-ring ring-2"></div>
+          <div class="float-shape shape-cube">
+            <div class="cube">
+              <div class="face front"></div>
+              <div class="face back"></div>
+              <div class="face right"></div>
+              <div class="face left"></div>
+              <div class="face top"></div>
+              <div class="face bottom"></div>
+            </div>
+          </div>
+          <div class="float-shape shape-ring"></div>
+          <div class="float-shape shape-dot dot-1"></div>
+          <div class="float-shape shape-dot dot-2"></div>
+          <div class="float-shape shape-dot dot-3"></div>
+          <div class="float-pill pill-react">⚛ React</div>
+          <div class="float-pill pill-css">✦ CSS</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll down">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section about">
+    <div class="section-inner">
+      <h2 class="section-title center" data-i18n="about.title">About me</h2>
+
+      <div class="cards-row" data-reveal>
+        <article class="info-card card-main is-open" tabindex="0">
+          <span class="card-num">01</span>
+          <h3 data-i18n="about.card1.title">Who I Am</h3>
+          <p class="card-body" data-i18n="about.card1.body">I'm a front-end developer who believes interfaces should feel effortless — calm rhythms, thoughtful spacing, and details that quietly do their job. I turn ideas into interactive, accessible, and beautifully crafted experiences on the web.</p>
+        </article>
+
+        <article class="info-card" tabindex="0">
+          <span class="card-num">02</span>
+          <h3 data-i18n="about.card2.title">My Approach</h3>
+          <p class="card-body" data-i18n="about.card2.body">Every project starts with listening — to the user, the brand, the problem. Then comes structure, motion, and polish, layered in that order, never the reverse.</p>
+        </article>
+
+        <article class="info-card" tabindex="0">
+          <span class="card-num">03</span>
+          <h3 data-i18n="about.card3.title">Beyond Code</h3>
+          <p class="card-body" data-i18n="about.card3.body">When I'm not coding, I'm sketching layouts, studying type, or exploring new design systems — always looking for the next small detail to refine.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section skills">
+    <div class="section-inner">
+      <h2 class="section-title center hoverline" data-i18n="skills.title">Skills</h2>
+      <p class="section-lead" data-i18n="skills.lead">My toolkit for crafting calm, thoughtful, and beautifully detailed digital experiences.</p>
+
+      <div class="skills-grid" data-reveal>
+        <div class="skill-chip"><span class="skill-icon">🧡</span><span>HTML</span></div>
+        <div class="skill-chip"><span class="skill-icon">🎨</span><span>CSS</span></div>
+        <div class="skill-chip"><span class="skill-icon">⚡</span><span>JavaScript</span></div>
+        <div class="skill-chip"><span class="skill-icon">▲</span><span>Next.js</span></div>
+        <div class="skill-chip"><span class="skill-icon">🔷</span><span>TypeScript</span></div>
+        <div class="skill-chip"><span class="skill-icon">🎯</span><span>Figma</span></div>
+        <div class="skill-chip"><span class="skill-icon">🌿</span><span>Git</span></div>
+        <div class="skill-chip"><span class="skill-icon">🔵</span><span>MUI</span></div>
+        <div class="skill-chip"><span class="skill-icon">🐜</span><span>Ant Design</span></div>
+        <div class="skill-chip"><span class="skill-icon">💨</span><span>Tailwind</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section id="portfolio" class="section portfolio">
+    <div class="section-inner">
+      <h2 class="section-title center hoverline" data-i18n="portfolio.title">Projects</h2>
+      <p class="section-lead" data-i18n="portfolio.lead">A selection of work I've designed and built — each one a small study in craft.</p>
+
+      <div class="projects-grid" data-reveal>
+
+        <article class="project-card">
+          <div class="project-thumb thumb-1">
+            <div class="thumb-glow"></div>
+            <span class="project-tag">Web App</span>
+          </div>
+          <div class="project-info">
+            <h3 data-i18n="portfolio.p1.title">Nimbus Dashboard</h3>
+            <p data-i18n="portfolio.p1.desc">An analytics dashboard with real-time charts, dark mode, and a fully accessible component library.</p>
+            <div class="project-stack">
+              <span>React</span><span>TypeScript</span><span>Tailwind</span>
+            </div>
+            <a href="#" class="project-link">
+              <span data-i18n="portfolio.viewProject">View project</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb thumb-2">
+            <div class="thumb-glow"></div>
+            <span class="project-tag">E-commerce</span>
+          </div>
+          <div class="project-info">
+            <h3 data-i18n="portfolio.p2.title">Aura Store</h3>
+            <p data-i18n="portfolio.p2.desc">A minimal storefront focused on speed and clarity — built with Next.js and a custom design system.</p>
+            <div class="project-stack">
+              <span>Next.js</span><span>MUI</span><span>Figma</span>
+            </div>
+            <a href="#" class="project-link">
+              <span data-i18n="portfolio.viewProject">View project</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb thumb-3">
+            <div class="thumb-glow"></div>
+            <span class="project-tag">Landing Page</span>
+          </div>
+          <div class="project-info">
+            <h3 data-i18n="portfolio.p3.title">Lumen Studio</h3>
+            <p data-i18n="portfolio.p3.desc">A scroll-driven landing page for a design studio, featuring layered motion and a bold type system.</p>
+            <div class="project-stack">
+              <span>JavaScript</span><span>CSS</span><span>GSAP</span>
+            </div>
+            <a href="#" class="project-link">
+              <span data-i18n="portfolio.viewProject">View project</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER / CONTACT ===== -->
+<footer id="contact" class="footer">
+  <div class="footer-inner">
+    <div class="footer-main">
+      <h2 class="footer-title" data-i18n="contact.title">Let's create something calm and beautiful together.</h2>
+      <a href="mailto:hello@umida.dev" class="footer-email">hello@umida.dev</a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-logo">
+        <span class="logo-letter">U</span><span class="logo-letter">S</span>
+      </div>
+
+      <div class="socials">
+        <a href="https://t.me/" target="_blank" rel="noopener" class="social-link" aria-label="Telegram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21.5 4.5L2.8 11.7C1.6 12.2 1.6 12.9 2.6 13.2L7.3 14.7L18.3 7.8C18.8 7.5 19.3 7.6 18.9 8L10 16.1H10L9.6 21C10.2 21 10.5 20.7 10.9 20.4L13.2 18.2L17.9 21.6C18.8 22.1 19.4 21.8 19.6 20.8L22.4 6.2C22.7 4.9 21.9 4.3 21.5 4.5Z" fill="currentColor"/></svg>
+          <span data-i18n="contact.telegram">Telegram</span>
+        </a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>
+          <span data-i18n="contact.instagram">Instagram</span>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="3.5" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 10V17M7.5 7.2V7.21M11.8 17V10M11.8 13C11.8 11.3 12.7 10 14.2 10C15.7 10 16.5 11 16.5 13V17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span data-i18n="contact.linkedin">LinkedIn</span>
+        </a>
+      </div>
+    </div>
+
+    <p class="footer-copy">&copy; <span id="year"></span> Umida. <span data-i18n="contact.rights">All rights reserved.</span></p>
+  </div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
